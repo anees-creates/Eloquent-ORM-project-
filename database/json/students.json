@@ -1,0 +1,52 @@
+[
+  {
+    "name": "Alice Johnson",
+    "age": 20,
+    "city": "Lahore"
+  },
+  {
+    "name": "Bob Williams",
+    "age": 22,
+    "city": "Karachi"
+  },
+  {
+    "name": "Charlie Brown",
+    "age": 19,
+    "city": "Islamabad"
+  },
+  {
+    "name": "Diana Miller",
+    "age": 21,
+    "city": "Faisalabad"
+  },
+  {
+    "name": "Eve Davis",
+    "age": 23,
+    "city": "Rawalpindi"
+  },
+  {
+    "name": "Frank White",
+    "age": 20,
+    "city": "Multan"
+  },
+  {
+    "name": "Grace Harris",
+    "age": 19,
+    "city": "Peshawar"
+  },
+  {
+    "name": "Henry Clark",
+    "age": 22,
+    "city": "Quetta"
+  },
+  {
+    "name": "Ivy Lewis",
+    "age": 21,
+    "city": "Hyderabad"
+  },
+  {
+    "name": "Jack Turner",
+    "age": 20,
+    "city": "Sialkot"
+  }
+]
