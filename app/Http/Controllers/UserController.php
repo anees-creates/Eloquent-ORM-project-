@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 
 
+
 class UserController extends Controller
 {
     /**
@@ -14,7 +15,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::paginate(4);
         return view('home',['users' => $users]);
     //$users = User::find([1,4,12]);
    // $users = User::where('city' ,'=','New York')->get();

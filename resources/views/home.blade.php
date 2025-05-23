@@ -43,5 +43,8 @@ All users data
                         </tbody>
                     </table>
                 </div>
-            </div>
+                
+            <div class="d-flex justify-content-center mt-5">
+            {{ $users->links() }}
+        </div>
             @endsection
