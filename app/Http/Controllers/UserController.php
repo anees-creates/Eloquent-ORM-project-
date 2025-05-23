@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 
+
+
 class UserController extends Controller
 {
     /**
@@ -12,7 +14,13 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        $users = User::all();
+        return view('home',['users' => $users]);
+    //$users = User::find([1,4,12]);
+   // $users = User::where('city' ,'=','New York')->get();
+    return $users;
+       
+    
     }
 
     /**
@@ -20,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('createuser');
     }
 
     /**
@@ -28,7 +36,19 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        /*$user = new User();
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->age = $request->age;
+        $user->city = $request->city;
+          $user->save();*/
+          User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'age' => $request->age,
+            'city' => $request->city,
+          ]);
+        return redirect()->route('users.index')->with('success', 'User created successfully.');
     }
 
     /**
@@ -36,7 +56,7 @@ class UserController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('userview', ['user' => $user]);
     }
 
     /**
@@ -44,7 +64,7 @@ class UserController extends Controller
      */
     public function edit(User $user)
     {
-        //
+      return view('updateuser');
     }
 
     /**
