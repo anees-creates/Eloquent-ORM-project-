@@ -42,6 +42,12 @@ class UserController extends Controller
         $user->age = $request->age;
         $user->city = $request->city;
           $user->save();*/
+          $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'age' => 'required|integer|min:1|max:120',
+            'city' => 'required|string|max:255',
+        ]);
           User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -74,6 +80,12 @@ class UserController extends Controller
      */
     public function update(Request $request, string $id)
     {
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|email',
+            'age' => 'required|integer|min:1|max:120',
+            'city' => 'required|string|max:255',
+        ]);
         $user=User::find($id);
         $user->name = $request->name;
         $user->email = $request->email;
@@ -86,8 +98,10 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(User $user)
+    public function destroy(string $id)
     {
-        //
+        $user = User::find($id);
+        $user->delete();
+        return redirect()->route('users.index')->with('success', 'User deleted successfully.');
     }
 }
