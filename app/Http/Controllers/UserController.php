@@ -62,17 +62,25 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(User $user)
+    public function edit(string $id)
     {
-      return view('updateuser');
+     $user =   User::find($id);
+        return view('updateuser', ['user' => $user]);
+        
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, string $id)
     {
-        //
+        $user=User::find($id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->age = $request->age;
+        $user->city = $request->city;
+        $user->save();
+        return redirect()->route('users.index')->with('success', 'User updated successfully.');
     }
 
     /**

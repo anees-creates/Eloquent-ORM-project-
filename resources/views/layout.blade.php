@@ -10,12 +10,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body class="bg-light"> <div class="container py-5"> <h4>@yield('title')</h4> <div class="d-flex justify-content-between align-items-center mb-4">
-        <div class="row">
-          <div class="col-8">
+        <div class="row" style="display:block">
+          <div class="col-8" style="block" width="100%" >
             @if (session('success'))
-                <div class="alert alert-success">
+                <div class="alert alert-success" style="width: 500px;">
                     {{ session('success') }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    
                 </div>
             
 
